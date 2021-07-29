@@ -1,6 +1,6 @@
 package constants;
 
-public interface jpaConst {
+public interface JpaConst {
 
 
     //persistence-unit名
