@@ -11,8 +11,17 @@ import constants.JpaConst;
 import models.Report;
 import models.validators.ReportValidator;
 
-public class ReportService extends ServiceBase{
+/**
+ * 日報テーブルの操作に関わる処理を行うクラス
+ */
+public class ReportService extends ServiceBase {
 
+    /**
+     * 指定した従業員が作成した日報データを、指定されたページ数の一覧画面に表示する分取得しReportViewのリストで返却する
+     * @param employee 従業員
+     * @param page ページ数
+     * @return 一覧画面に表示するデータのリスト
+     */
     public List<ReportView> getMinePerPage(EmployeeView employee, int page) {
 
         List<Report> reports = em.createNamedQuery(JpaConst.Q_REP_GET_ALL_MINE, Report.class)
